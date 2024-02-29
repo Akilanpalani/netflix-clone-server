@@ -1,0 +1,29 @@
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+
+const { run } = require('./src/utils/mongodb');
+const userRoute = require('./src/routes/user.route');
+const authRoute = require('./src/routes/auth.route');
+
+const PORT = 5000;
+const app = express();
+
+//body-praser
+app.use(bodyParser.json());
+
+app.use(cors());
+app.use(express.json());
+
+run();
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+//Routes
+app.use('/api', userRoute);
+app.use('/api', authRoute);
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
