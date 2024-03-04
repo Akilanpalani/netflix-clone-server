@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 //CORS Configuration
 const corsOptions = {
   origin: 'https://moviesclone-netflix.netlify.app',
-  methos: 'GET,POST,PUT,DELETE,PATCH,HEAD',
+  methods: 'GET,POST,PUT,DELETE,PATCH,HEAD',
   credentials: true,
   optionsSuccessStatus: 200,
 };
