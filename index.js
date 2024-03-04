@@ -30,8 +30,8 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 //Routes
-app.use('/api', userRoute);
-app.use('/api', authRoute);
+app.use('/api/users', userRoute);
+app.use('/api/auth', authRoute);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
