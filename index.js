@@ -13,14 +13,14 @@ const app = express();
 app.use(bodyParser.json());
 
 //CORS Configuration
-const corsOptions = {
-  origin: 'https://moviesclone-netflix.netlify.app',
-  methods: 'GET,POST,PUT,DELETE,PATCH,HEAD',
-  credentials: true,
-  optionsSuccessStatus: 204,
-};
+// const corsOptions = {
+//   origin: 'https://moviesclone-netflix.netlify.app',
+//   methods: 'GET,POST,PUT,DELETE,PATCH,HEAD',
+//   credentials: true,
+//   optionsSuccessStatus: 204,
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(express.json());
 
@@ -29,6 +29,12 @@ run();
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
+
+// testing the api call
+app.get('/api', (req, res) => {
+  res.send('Hello World!');
+});
+
 //Routes
 app.use('/api/users', userRoute);
 app.use('/api/auth', authRoute);
