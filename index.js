@@ -9,18 +9,15 @@ const authRoute = require('./src/routes/auth.route');
 const PORT = 5000;
 const app = express();
 
+//CORS Configuration
+const corsOptions = {
+  origin: ['https://flixmagnet.netlify.app', 'http://localhost:3000'],
+};
+
+app.use(cors(corsOptions));
+
 //body-praser
 app.use(bodyParser.json());
-
-//CORS Configuration
-// const corsOptions = {
-//   origin: 'https://moviesclone-netflix.netlify.app',
-//   methods: 'GET,POST,PUT,DELETE,PATCH,HEAD',
-//   credentials: true,
-//   optionsSuccessStatus: 204,
-// };
-
-app.use(cors());
 
 app.use(express.json());
 
