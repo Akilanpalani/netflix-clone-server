@@ -19,8 +19,6 @@ app.use(cors(corsOptions));
 //body-praser
 app.use(bodyParser.json());
 
-app.use(express.json());
-
 run();
 
 app.get('/', (req, res) => {
@@ -28,9 +26,9 @@ app.get('/', (req, res) => {
 });
 
 // testing the api call
-app.get('/api', (req, res) => {
-  res.send('Hello World!');
-});
+// app.get('/api', (req, res) => {
+//   res.send('Hello World!');
+// });
 
 //Routes
 app.use('/api/users', userRoute);
